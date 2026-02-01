@@ -1,120 +1,302 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>制度基因：结构性权力的历史演进</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>制度基因：中国制度与极权主义制度的起源 | 深度解析</title>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    
+    <!-- Plotly.js -->
+    <script src="https://cdn.plot.ly/plotly-2.27.0.min.js"></script>
 
-  <!-- Tailwind -->
-  <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;700&family=Noto+Sans+SC:wght@300;400;500;700&display=swap" rel="stylesheet">
 
-  <!-- Chart.js -->
-  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-
-  <!-- Plotly -->
-  <script src="https://cdn.plot.ly/plotly-2.27.0.min.js"></script>
-
-  <!-- Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;700&display=swap" rel="stylesheet">
-
-  <script>
-    tailwind.config = {
-      theme: {
-        extend: {
-          fontFamily: {
-            serif: ['"Noto Serif SC"', 'serif']
-          }
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'paper-bg': '#fcfbf7', // Warm neutral background
+                        'ink-black': '#2c2c2c', // Soft black for text
+                        'subtle-gray': '#e5e5e5',
+                        'highlight-gold': '#d4af37', // Muted gold for accents
+                        'alert-red': '#a83232', // Muted red for critical points
+                        'calm-blue': '#4a6fa5', // Secondary data color
+                        'soviet-yellow': '#e6b800' // Contextual accent
+                    },
+                    fontFamily: {
+                        serif: ['"Noto Serif SC"', 'serif'],
+                        sans: ['"Noto Sans SC"', 'sans-serif'],
+                    }
+                }
+            }
         }
-      }
-    }
-  </script>
+    </script>
+
+    <style>
+        body {
+            background-color: #fcfbf7;
+            color: #2c2c2c;
+        }
+        .chart-container {
+            position: relative;
+            width: 100%;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+            height: 350px;
+            max-height: 400px;
+        }
+        .section-card {
+            background: white;
+            border: 1px solid #e5e7eb;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+            transition: all 0.3s ease;
+        }
+        .section-card:hover {
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+        }
+        .nav-btn.active {
+            border-bottom: 2px solid #a83232;
+            color: #a83232;
+            font-weight: 700;
+        }
+    </style>
 </head>
+<body class="font-sans antialiased min-h-screen flex flex-col">
 
-<body class="bg-gray-100 text-gray-900 font-serif">
+    <!-- Header / Hero -->
+    <header class="w-full bg-white border-b border-gray-200 sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <div class="flex items-center">
+                    <span class="text-2xl font-serif font-bold text-ink-black tracking-tight">制度基因</span>
+                    <span class="ml-3 text-xs px-2 py-1 bg-gray-100 text-gray-600 rounded-md hidden sm:inline-block">许成钢学术研究深度解析</span>
+                </div>
+                <nav class="flex space-x-6 overflow-x-auto no-scrollbar">
+                    <button onclick="scrollToSection('intro')" class="nav-btn active whitespace-nowrap py-2 px-1 text-sm font-medium transition-colors">核心论点</button>
+                    <button onclick="scrollToSection('concepts')" class="nav-btn whitespace-nowrap py-2 px-1 text-sm font-medium transition-colors text-gray-500 hover:text-ink-black">定义与比较</button>
+                    <button onclick="scrollToSection('history')" class="nav-btn whitespace-nowrap py-2 px-1 text-sm font-medium transition-colors text-gray-500 hover:text-ink-black">历史演变</button>
+                    <button onclick="scrollToSection('mechanisms')" class="nav-btn whitespace-nowrap py-2 px-1 text-sm font-medium transition-colors text-gray-500 hover:text-ink-black">基因解码</button>
+                </nav>
+            </div>
+        </div>
+    </header>
 
-<!-- Hero -->
-<section class="max-w-4xl mx-auto p-8">
-  <h1 class="text-4xl font-bold mb-4">制度基因：结构性权力的历史演进</h1>
-  <p class="text-lg text-gray-700">
-    本文以“制度基因”为分析框架，解释中国政治经济结构中长期存在的权力集中、
-    周期性改革与再集中现象。
-  </p>
-</section>
+    <main class="flex-grow w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 space-y-16">
 
-<!-- Concept Radar -->
-<section class="max-w-4xl mx-auto p-8">
-  <h2 class="text-2xl font-bold mb-4">一、制度类型对比</h2>
-  <canvas id="radarChart"></canvas>
-</section>
+        <!-- SECTION 1: INTRODUCTION -->
+        <section id="intro" class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+            <div class="lg:col-span-7 space-y-6">
+                <h1 class="text-4xl sm:text-5xl font-serif font-bold leading-tight text-ink-black">
+                    中国制度与<br><span class="text-alert-red">极权主义</span>的起源
+                </h1>
+                <p class="text-lg text-gray-700 leading-relaxed border-l-4 border-highlight-gold pl-4">
+                    为什么中国的经济改革没有带来预期的政治民主化？许成钢教授提出“制度基因”理论：中国现行制度是中国皇权专制传统与苏联布尔什维克主义的结合体。
+                </p>
+                <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 pt-4">
+                    <div class="p-4 bg-white rounded-lg border border-gray-100 shadow-sm text-center">
+                        <div class="text-2xl mb-2">🧬</div>
+                        <h3 class="font-bold text-sm">制度基因</h3>
+                        <p class="text-xs text-gray-500 mt-1">自我复制的结构性要素</p>
+                    </div>
+                    <div class="p-4 bg-white rounded-lg border border-gray-100 shadow-sm text-center">
+                        <div class="text-2xl mb-2">🏛️</div>
+                        <h3 class="font-bold text-sm">党国体制</h3>
+                        <p class="text-xs text-gray-500 mt-1">超越法律的控制体系</p>
+                    </div>
+                    <div class="p-4 bg-white rounded-lg border border-gray-100 shadow-sm text-center">
+                        <div class="text-2xl mb-2">📉</div>
+                        <h3 class="font-bold text-sm">改革陷阱</h3>
+                        <p class="text-xs text-gray-500 mt-1">分权是为了集权的生存</p>
+                    </div>
+                </div>
+            </div>
+            <div class="lg:col-span-5 bg-white p-6 rounded-xl shadow-sm border border-gray-200">
+                <h3 class="text-sm font-bold text-gray-400 uppercase tracking-wider mb-4">核心逻辑概览</h3>
+                <ul class="space-y-4">
+                    <li class="flex items-start">
+                        <span class="flex-shrink-0 h-6 w-6 rounded-full bg-red-100 text-alert-red flex items-center justify-center text-xs font-bold mt-0.5">1</span>
+                        <div class="ml-3">
+                            <p class="text-sm font-medium text-ink-black">秦制传统的复活</p>
+                            <p class="text-xs text-gray-500">大一统、编户齐民、对社会资源的绝对汲取。</p>
+                        </div>
+                    </li>
+                    <li class="flex items-start">
+                        <span class="flex-shrink-0 h-6 w-6 rounded-full bg-yellow-100 text-yellow-700 flex items-center justify-center text-xs font-bold mt-0.5">2</span>
+                        <div class="ml-3">
+                            <p class="text-sm font-medium text-ink-black">列宁主义的组织</p>
+                            <p class="text-xs text-gray-500">党在国上，党拥有全部人事权与资产权。</p>
+                        </div>
+                    </li>
+                    <li class="flex items-start">
+                        <span class="flex-shrink-0 h-6 w-6 rounded-full bg-blue-100 text-calm-blue flex items-center justify-center text-xs font-bold mt-0.5">3</span>
+                        <div class="ml-3">
+                            <p class="text-sm font-medium text-ink-black">极权主义的弹性</p>
+                            <p class="text-xs text-gray-500">在生存危机时下放行政权（RDA），但保留核心控制权。</p>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </section>
 
-<!-- Historical Timeline -->
-<section class="max-w-4xl mx-auto p-8">
-  <h2 class="text-2xl font-bold mb-4">二、历史演进轨迹</h2>
-  <div id="timeline"></div>
-</section>
+        <hr class="border-gray-200">
 
-<!-- Institutional Genes -->
-<section class="max-w-6xl mx-auto p-8">
-  <h2 class="text-2xl font-bold mb-6">三、制度基因拆解</h2>
-  <div class="grid md:grid-cols-3 gap-6">
-    <div class="bg-white p-4 rounded shadow">
-      <h3 class="font-bold mb-2">人事控制</h3>
-      <p>通过组织系统控制关键岗位，形成自上而下的忠诚链条。</p>
-    </div>
-    <div class="bg-white p-4 rounded shadow">
-      <h3 class="font-bold mb-2">财产权结构</h3>
-      <p>模糊产权与行政裁量并存，增强权力对经济的渗透能力。</p>
-    </div>
-    <div class="bg-white p-4 rounded shadow">
-      <h3 class="font-bold mb-2">意识形态</h3>
-      <p>通过叙事合法化权力集中，周期性调整话语张力。</p>
-    </div>
-  </div>
-</section>
+        <!-- SECTION 2: CONCEPTS COMPARISON -->
+        <section id="concepts">
+            <div class="mb-8">
+                <h2 class="text-3xl font-serif font-bold text-ink-black mb-4">极权 vs 威权：概念辨析</h2>
+                <p class="text-gray-600 max-w-3xl">
+                    许成钢特别强调极权主义 (Totalitarianism) 与 威权主义 (Authoritarianism) 的区别。中国体制属于极权主义的变种。
+                </p>
+            </div>
 
-<!-- Mechanism Flow -->
-<section class="max-w-6xl mx-auto p-8">
-  <h2 class="text-2xl font-bold mb-6">四、结构性机制</h2>
-  <div class="flex flex-col md:flex-row gap-4 text-center">
-    <div class="flex-1 bg-white p-4 rounded shadow">党</div>
-    <div class="flex-1 bg-white p-4 rounded shadow">国家</div>
-    <div class="flex-1 bg-white p-4 rounded shadow">经济</div>
-    <div class="flex-1 bg-white p-4 rounded shadow">社会</div>
-  </div>
-</section>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="col-span-1 space-y-4">
+                    <button onclick="updateRadar('totalitarian')" class="w-full text-left p-4 rounded-lg border transition-all hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-alert-red active-model bg-white border-l-4 border-l-alert-red shadow-sm" id="btn-totalitarian">
+                        <h4 class="font-bold text-ink-black">极权主义 (Totalitarian)</h4>
+                        <p class="text-xs text-gray-600 mt-2">特征：全能控制，包括经济、思想、社会组织。</p>
+                    </button>
+                    <button onclick="updateRadar('authoritarian')" class="w-full text-left p-4 rounded-lg border border-gray-200 transition-all hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-calm-blue bg-white" id="btn-authoritarian">
+                        <h4 class="font-bold text-ink-black">威权主义 (Authoritarian)</h4>
+                        <p class="text-xs text-gray-600 mt-2">特征：政治垄断，但允许有限的经济自由。</p>
+                    </button>
+                    <button onclick="updateRadar('china_reform')" class="w-full text-left p-4 rounded-lg border border-gray-200 transition-all hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-highlight-gold bg-white" id="btn-china_reform">
+                        <h4 class="font-bold text-ink-black">中国模式 (改革期)</h4>
+                        <p class="text-xs text-gray-600 mt-2">特征：分权式极权。放松经济管制，但保留核心控制。</p>
+                    </button>
+                </div>
 
-<!-- Conclusion -->
-<section class="max-w-4xl mx-auto p-8">
-  <h2 class="text-2xl font-bold mb-4">结论：改革陷阱</h2>
-  <p>
-    在既有制度基因未被根本重构的情况下，改革往往导致短期放权，
-    随后在风险感知上升时重新收紧，形成“改革—集中”的循环。
-  </p>
-</section>
+                <div class="col-span-1 md:col-span-2 bg-white rounded-xl shadow-sm border border-gray-200 p-4 flex flex-col justify-center items-center">
+                    <div class="chart-container">
+                        <canvas id="regimeRadar"></canvas>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-<script>
-  new Chart(document.getElementById('radarChart'), {
-    type: 'radar',
-    data: {
-      labels: ['权力集中', '法治程度', '市场自主', '社会自治', '意识形态'],
-      datasets: [{
-        label: '中国模式',
-        data: [5, 2, 2, 1, 4]
-      },{
-        label: '民主制度',
-        data: [2, 4, 4, 4, 2]
-      }]
-    }
-  });
+        <!-- SECTION 3: EVOLUTION -->
+        <section id="history" class="bg-gray-50 rounded-2xl p-6 sm:p-10 border border-gray-200">
+            <h2 class="text-3xl font-serif font-bold text-ink-black mb-4">演变轨迹：控制与增长的张力</h2>
+            <div class="w-full bg-white rounded-xl shadow-sm border border-gray-200 p-2 mb-6">
+                 <div id="evolutionChart" class="w-full h-[400px]"></div>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <div id="phase-mao" class="p-4 rounded-lg bg-white border-l-4 border-red-800 shadow-sm opacity-50 cursor-pointer" onclick="highlightPhase(0)">
+                    <h4 class="font-bold text-red-900">1. 极权建立期 (1949-1976)</h4>
+                    <p class="text-xs text-gray-600 mt-2">全盘苏化，建立公有制与计划经济。</p>
+                </div>
+                <div id="phase-deng" class="p-4 rounded-lg bg-white border-l-4 border-yellow-600 shadow-sm opacity-100 cursor-pointer" onclick="highlightPhase(1)">
+                    <h4 class="font-bold text-yellow-800">2. 分权式极权 (1978-2012)</h4>
+                    <p class="text-xs text-gray-600 mt-2">为了生存，中央向地方分权，创造了增长奇迹。</p>
+                </div>
+                <div id="phase-xi" class="p-4 rounded-lg bg-white border-l-4 border-red-600 shadow-sm opacity-50 cursor-pointer" onclick="highlightPhase(2)">
+                    <h4 class="font-bold text-red-700">3. 极权回归期 (2012-至今)</h4>
+                    <p class="text-xs text-gray-600 mt-2">利用高科技重新收权，强调安全高于增长。</p>
+                </div>
+            </div>
+        </section>
 
-  Plotly.newPlot('timeline', [{
-    x: ['1950', '1980', '2000', '2020'],
-    y: [5, 2, 3, 5],
-    mode: 'lines+markers'
-  }], {
-    title: '控制强度的历史波动'
-  });
-</script>
+        <!-- SECTION 4: GENES -->
+        <section id="mechanisms">
+            <div class="text-center mb-10">
+                <h2 class="text-3xl font-serif font-bold text-ink-black">解码制度基因</h2>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 relative">
+                <div class="space-y-6">
+                    <div class="text-center bg-paper-bg p-2 rounded border border-gray-200 w-full mb-4">
+                        <span class="font-serif font-bold text-xl text-yellow-900">🏛️ 秦汉体制基因</span>
+                    </div>
+                    <div class="section-card p-6 rounded-xl">
+                        <h4 class="font-bold text-lg mb-2">大一统</h4>
+                        <p class="text-sm text-gray-600">无论是土地还是人口，都是皇权的资产。</p>
+                    </div>
+                    <div class="section-card p-6 rounded-xl">
+                        <h4 class="font-bold text-lg mb-2">官僚治国</h4>
+                        <p class="text-sm text-gray-600">官员只对上级负责，不对下负责。</p>
+                    </div>
+                </div>
+                <div class="space-y-6">
+                    <div class="text-center bg-paper-bg p-2 rounded border border-gray-200 w-full mb-4">
+                        <span class="font-serif font-bold text-xl text-red-900">☭ 布尔什维克基因</span>
+                    </div>
+                    <div class="section-card p-6 rounded-xl">
+                        <h4 class="font-bold text-lg mb-2">党国体制</h4>
+                        <p class="text-sm text-gray-600">党在法律之上，党在国家之上。</p>
+                    </div>
+                    <div class="section-card p-6 rounded-xl">
+                        <h4 class="font-bold text-lg mb-2">党管干部</h4>
+                        <p class="text-sm text-gray-600">核心是对人事权的绝对垄断。</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
 
+    <footer class="bg-white border-t border-gray-200 mt-12 py-10 text-center">
+        <p class="text-sm text-gray-500">© 2026 Interactive Academic Analysis</p>
+    </footer>
+
+    <script>
+        let radarChart;
+        const radarData = {
+            totalitarian: { label: '极权主义', data: [10, 10, 10, 9, 10], color: 'rgba(168, 50, 50, 0.7)' },
+            authoritarian: { label: '威权主义', data: [8, 4, 3, 6, 2], color: 'rgba(74, 111, 165, 0.7)' },
+            china_reform: { label: '中国分权式极权', data: [9, 5, 8, 7, 6], color: 'rgba(212, 175, 55, 0.7)' }
+        };
+
+        function initRadarChart() {
+            const ctx = document.getElementById('regimeRadar').getContext('2d');
+            radarChart = new Chart(ctx, {
+                type: 'radar',
+                data: {
+                    labels: ['政治垄断', '经济控制', '人事控制', '暴力/强制', '意识形态'],
+                    datasets: [{
+                        label: radarData.totalitarian.label,
+                        data: radarData.totalitarian.data,
+                        backgroundColor: 'rgba(168, 50, 50, 0.2)',
+                        borderColor: 'rgba(168, 50, 50, 1)'
+                    }]
+                },
+                options: { responsive: true, maintainAspectRatio: false }
+            });
+        }
+
+        function updateRadar(type) {
+            const selected = radarData[type];
+            radarChart.data.datasets[0].data = selected.data;
+            radarChart.data.datasets[0].label = selected.label;
+            radarChart.data.datasets[0].borderColor = selected.color.replace('0.7', '1');
+            radarChart.update();
+        }
+
+        function initEvolutionChart() {
+            const years = [1950, 1958, 1966, 1976, 1978, 1989, 1992, 2001, 2008, 2012, 2018, 2023];
+            const trace1 = { x: years, y: [9, 10, 10, 9.5, 7, 8.5, 6, 5, 6, 8, 9, 9.5], name: '集权度', type: 'scatter', line: {color: '#a83232'} };
+            const trace2 = { x: years, y: [3, -5, -2, 2, 8, 4, 12, 10, 9, 7, 6, 5], name: '增长率', yaxis: 'y2', type: 'scatter', fill: 'tozeroy', line: {color: '#d4af37'} };
+            Plotly.newPlot('evolutionChart', [trace1, trace2], {
+                yaxis2: { overlaying: 'y', side: 'right' },
+                margin: { l: 40, r: 40, t: 20, b: 40 },
+                legend: { orientation: 'h' }
+            });
+        }
+
+        function scrollToSection(id) {
+            document.getElementById(id).scrollIntoView({ behavior: 'smooth' });
+        }
+
+        function highlightPhase(index) {
+            const ids = ['phase-mao', 'phase-deng', 'phase-xi'];
+            ids.forEach((id, i) => document.getElementById(id).style.opacity = (i === index ? '1' : '0.5'));
+        }
+
+        window.onload = () => { initRadarChart(); initEvolutionChart(); };
+    </script>
 </body>
 </html>
