@@ -1,0 +1,558 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <title></title>
+  <meta name="Generator" content="Cocoa HTML Writer">
+  <meta name="CocoaVersion" content="2575.7">
+  <style type="text/css">
+    p.p1 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Helvetica}
+    p.p2 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Helvetica; min-height: 14.0px}
+  </style>
+</head>
+<body>
+<p class="p1">&lt;!DOCTYPE html&gt;</p>
+<p class="p1">&lt;html lang="zh-CN"&gt;</p>
+<p class="p1">&lt;head&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;meta charset="UTF-8"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;title&gt;制度基因：中国制度与极权主义制度的起源 | 深度解析&lt;/title&gt;</p>
+<p class="p2"><span class="Apple-converted-space">    </span></p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;!-- Tailwind CSS --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;script src="https://cdn.tailwindcss.com"&gt;&lt;/script&gt;</p>
+<p class="p2"><span class="Apple-converted-space">    </span></p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;!-- Chart.js --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;script src="https://cdn.jsdelivr.net/npm/chart.js"&gt;&lt;/script&gt;</p>
+<p class="p2"><span class="Apple-converted-space">    </span></p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;!-- Plotly.js --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;script src="https://cdn.plot.ly/plotly-2.27.0.min.js"&gt;&lt;/script&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;!-- Google Fonts --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;700&amp;family=Noto+Sans+SC:wght@300;400;500;700&amp;display=swap" rel="stylesheet"&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;script&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>tailwind.config = {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>theme: {</p>
+<p class="p1"><span class="Apple-converted-space">                </span>extend: {</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>colors: {</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>'paper-bg': '#fcfbf7', // Warm neutral background</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>'ink-black': '#2c2c2c', // Soft black for text</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>'subtle-gray': '#e5e5e5',</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>'highlight-gold': '#d4af37', // Muted gold for accents</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>'alert-red': '#a83232', // Muted red for critical points</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>'calm-blue': '#4a6fa5', // Secondary data color</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>'soviet-yellow': '#e6b800' // Contextual accent</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>},</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>fontFamily: {</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>serif: ['"Noto Serif SC"', 'serif'],</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>sans: ['"Noto Sans SC"', 'sans-serif'],</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>}</p>
+<p class="p1"><span class="Apple-converted-space">                </span>}</p>
+<p class="p1"><span class="Apple-converted-space">            </span>}</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/script&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;!-- Chosen Palette: Warm Neutrals (Paper/Ink) with Muted Historical Accents (Gold/Red/Blue). Designed for readability and academic gravity. --&gt;</p>
+<p class="p2"><span class="Apple-converted-space">    </span></p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;!-- Application Structure Plan:<span class="Apple-converted-space"> </span></p>
+<p class="p1"><span class="Apple-converted-space">         </span>1. Hero Section: Introduces Xu Chenggang's thesis ("Institutional Genes") to frame the user's mindset.</p>
+<p class="p1"><span class="Apple-converted-space">         </span>2. Conceptual Framework (Radar Chart): Interactive comparison of "Totalitarianism" vs. "Authoritarianism" vs. "Democracy" to clarify definitions, a key part of the report.</p>
+<p class="p1"><span class="Apple-converted-space">         </span>3. Historical Trajectory (Interactive Timeline/Plotly): Traces the evolution of the CCP regime from Mao to Reform to Now, visualized as a tension between "Control" and "Growth".</p>
+<p class="p1"><span class="Apple-converted-space">         </span>4. The Genetic Code (Interactive Cards): Deconstructs the "Institutional Genes" (Imperial + Soviet legacies) into specific mechanisms (Personnel, Property, Ideology).</p>
+<p class="p1"><span class="Apple-converted-space">         </span>5. The Mechanism (Visual Logic): Explains the "Regionally Decentralized Authoritarianism" (RDA) paradox.</p>
+<p class="p1"><span class="Apple-converted-space">         </span>6. Synthesis: Conclusion on the "Reform Trap".</p>
+<p class="p1"><span class="Apple-converted-space">         </span>Rationale: This structure moves from Abstract Definition -&gt; Historical Context -&gt; Structural Mechanics -&gt; Future Implications, aiding deep understanding.</p>
+<p class="p1"><span class="Apple-converted-space">    </span>--&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;!-- Visualization &amp; Content Choices:</p>
+<p class="p1"><span class="Apple-converted-space">         </span>1. Comparison Radar Chart (Chart.js): Goal: Inform/Compare. Shows how the Chinese system shifts on different axes (Ideology, Economy, Personnel) compared to other models.</p>
+<p class="p1"><span class="Apple-converted-space">         </span>2. Evolution Line Chart (Plotly): Goal: Change/Trends. Visualizes the cyclical tightening and loosening of control over time.</p>
+<p class="p1"><span class="Apple-converted-space">         </span>3. Gene Cards (HTML/JS): Goal: Organize. Breaks down complex theoretical origins into digestible, clickable cards using CSS Grid.</p>
+<p class="p1"><span class="Apple-converted-space">         </span>4. Mechanism Flow (HTML/CSS): Goal: Inform. Uses styled HTML elements to show the hierarchy of Party &gt; State &gt; Economy.</p>
+<p class="p1"><span class="Apple-converted-space">         </span>NO SVG or Mermaid used.</p>
+<p class="p1"><span class="Apple-converted-space">    </span>--&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;!-- CONFIRMATION: NO SVG graphics used. NO Mermaid JS used. --&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;style&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>body {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>background-color: #fcfbf7;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>color: #2c2c2c;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p1"><span class="Apple-converted-space">        </span>.chart-container {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>position: relative;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>width: 100%;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>max-width: 600px;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>margin-left: auto;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>margin-right: auto;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>height: 350px;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>max-height: 400px;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p1"><span class="Apple-converted-space">        </span>.section-card {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>background: white;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>border: 1px solid #e5e7eb;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>transition: all 0.3s ease;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p1"><span class="Apple-converted-space">        </span>.section-card:hover {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p1"><span class="Apple-converted-space">        </span>.nav-btn.active {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>border-bottom: 2px solid #a83232;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>color: #a83232;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>font-weight: 700;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/style&gt;</p>
+<p class="p1">&lt;/head&gt;</p>
+<p class="p1">&lt;body class="font-sans antialiased min-h-screen flex flex-col"&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;!-- Header / Hero --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;header class="w-full bg-white border-b border-gray-200 sticky top-0 z-50"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="flex justify-between items-center h-16"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;div class="flex items-center"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;span class="text-2xl font-serif font-bold text-ink-black tracking-tight"&gt;制度基因&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;span class="ml-3 text-xs px-2 py-1 bg-gray-100 text-gray-600 rounded-md hidden sm:inline-block"&gt;许成钢学术研究深度解析&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;!-- Navigation --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;nav class="flex space-x-6 overflow-x-auto no-scrollbar"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;button onclick="scrollToSection('intro')" class="nav-btn active whitespace-nowrap py-2 px-1 text-sm font-medium transition-colors"&gt;核心论点&lt;/button&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;button onclick="scrollToSection('concepts')" class="nav-btn whitespace-nowrap py-2 px-1 text-sm font-medium transition-colors text-gray-500 hover:text-ink-black"&gt;定义与比较&lt;/button&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;button onclick="scrollToSection('history')" class="nav-btn whitespace-nowrap py-2 px-1 text-sm font-medium transition-colors text-gray-500 hover:text-ink-black"&gt;历史演变&lt;/button&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;button onclick="scrollToSection('mechanisms')" class="nav-btn whitespace-nowrap py-2 px-1 text-sm font-medium transition-colors text-gray-500 hover:text-ink-black"&gt;基因解码&lt;/button&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/nav&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/header&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;!-- Main Content --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;main class="flex-grow w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 space-y-16"&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;!-- SECTION 1: INTRODUCTION --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;section id="intro" class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="lg:col-span-7 space-y-6"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;h1 class="text-4xl sm:text-5xl font-serif font-bold leading-tight text-ink-black"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>中国制度与&lt;br&gt;&lt;span class="text-alert-red"&gt;极权主义&lt;/span&gt;的起源</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/h1&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;p class="text-lg text-gray-700 leading-relaxed border-l-4 border-highlight-gold pl-4"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>为什么中国的经济改革没有带来预期的政治民主化？许成钢教授提出“制度基因”理论：中国现行制度是&lt;strong&gt;中国皇权专制传统&lt;/strong&gt;与&lt;strong&gt;苏联布尔什维克主义&lt;/strong&gt;的结合体。通过解析其内在的“基因”，我们可以理解其极强的适应性与最终的局限性。</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;div class="grid grid-cols-1 sm:grid-cols-3 gap-4 pt-4"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;div class="p-4 bg-white rounded-lg border border-gray-100 shadow-sm text-center"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;div class="text-2xl mb-2"&gt;🧬&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;h3 class="font-bold text-sm"&gt;制度基因&lt;/h3&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;p class="text-xs text-gray-500 mt-1"&gt;自我复制的结构性要素&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;div class="p-4 bg-white rounded-lg border border-gray-100 shadow-sm text-center"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;div class="text-2xl mb-2"&gt;🏛️&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;h3 class="font-bold text-sm"&gt;党国体制&lt;/h3&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;p class="text-xs text-gray-500 mt-1"&gt;超越法律的控制体系&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;div class="p-4 bg-white rounded-lg border border-gray-100 shadow-sm text-center"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;div class="text-2xl mb-2"&gt;📉&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;h3 class="font-bold text-sm"&gt;改革陷阱&lt;/h3&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;p class="text-xs text-gray-500 mt-1"&gt;分权是为了集权的生存&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="lg:col-span-5 bg-white p-6 rounded-xl shadow-sm border border-gray-200"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;h3 class="text-sm font-bold text-gray-400 uppercase tracking-wider mb-4"&gt;核心逻辑概览&lt;/h3&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;ul class="space-y-4"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;li class="flex items-start"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;span class="flex-shrink-0 h-6 w-6 rounded-full bg-red-100 text-alert-red flex items-center justify-center text-xs font-bold mt-0.5"&gt;1&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;div class="ml-3"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;p class="text-sm font-medium text-ink-black"&gt;秦制传统的复活&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;p class="text-xs text-gray-500"&gt;大一统、编户齐民、对社会资源的绝对汲取。&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;/li&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;li class="flex items-start"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;span class="flex-shrink-0 h-6 w-6 rounded-full bg-yellow-100 text-yellow-700 flex items-center justify-center text-xs font-bold mt-0.5"&gt;2&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;div class="ml-3"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;p class="text-sm font-medium text-ink-black"&gt;列宁主义的组织&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;p class="text-xs text-gray-500"&gt;党在国上，党拥有全部人事权与资产权。&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;/li&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;li class="flex items-start"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;span class="flex-shrink-0 h-6 w-6 rounded-full bg-blue-100 text-calm-blue flex items-center justify-center text-xs font-bold mt-0.5"&gt;3&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;div class="ml-3"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;p class="text-sm font-medium text-ink-black"&gt;极权主义的弹性&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;p class="text-xs text-gray-500"&gt;在生存危机时下放行政权（RDA），但保留核心控制权。&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;/li&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/ul&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/section&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;hr class="border-gray-200"&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;!-- SECTION 2: CONCEPTS COMPARISON (RADAR CHART) --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;section id="concepts"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="mb-8"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;h2 class="text-3xl font-serif font-bold text-ink-black mb-4"&gt;极权 vs 威权：概念辨析&lt;/h2&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;p class="text-gray-600 max-w-3xl"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>许成钢特别强调&lt;strong&gt;极权主义 (Totalitarianism)&lt;/strong&gt; 与 &lt;strong&gt;威权主义 (Authoritarianism)&lt;/strong&gt; 的区别。极权主义不仅是独裁，而是试图对社会、经济、思想进行全方位的控制。中国体制属于极权主义的变种。</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;br&gt;&lt;span class="text-xs text-gray-400 italic"&gt;点击下方按钮切换模型进行对比。&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="grid grid-cols-1 md:grid-cols-3 gap-8"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;!-- Controls/Explanation --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;div class="col-span-1 space-y-4"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;button onclick="updateRadar('totalitarian')" class="w-full text-left p-4 rounded-lg border transition-all hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-alert-red active-model bg-white border-l-4 border-l-alert-red shadow-sm" id="btn-totalitarian"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;h4 class="font-bold text-ink-black"&gt;极权主义 (Totalitarian)&lt;/h4&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;p class="text-xs text-gray-500 mt-1"&gt;如：苏联、毛泽东时代、纳粹德国&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;p class="text-xs text-gray-600 mt-2"&gt;特征：全能控制，包括经济、思想、社会组织。消灭任何独立于国家的组织。&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;/button&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;button onclick="updateRadar('authoritarian')" class="w-full text-left p-4 rounded-lg border border-gray-200 transition-all hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-calm-blue bg-white" id="btn-authoritarian"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;h4 class="font-bold text-ink-black"&gt;威权主义 (Authoritarian)&lt;/h4&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;p class="text-xs text-gray-500 mt-1"&gt;如：前苏联解体后的俄罗斯、皮诺切特时期的智利&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;p class="text-xs text-gray-600 mt-2"&gt;特征：政治垄断，但允许有限的经济自由和部分社会多元化。&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;/button&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;button onclick="updateRadar('china_reform')" class="w-full text-left p-4 rounded-lg border border-gray-200 transition-all hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-highlight-gold bg-white" id="btn-china_reform"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;h4 class="font-bold text-ink-black"&gt;中国模式 (改革开放期)&lt;/h4&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;p class="text-xs text-gray-500 mt-1"&gt;如：邓小平、江泽民时期&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;p class="text-xs text-gray-600 mt-2"&gt;特征：分权式极权。放松经济管制以求生存，但保留核心政治与人事控制。&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;/button&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;!-- Radar Chart --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;div class="col-span-1 md:col-span-2 bg-white rounded-xl shadow-sm border border-gray-200 p-4 flex flex-col justify-center items-center"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;div class="chart-container"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;canvas id="regimeRadar"&gt;&lt;/canvas&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;p class="text-center text-xs text-gray-400 mt-4"&gt;图表展示了不同体制在关键维度上的控制力度 (0-10)&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/section&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;!-- SECTION 3: EVOLUTION (TIMELINE &amp; PLOTLY) --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;section id="history" class="bg-gray-50 rounded-2xl p-6 sm:p-10 border border-gray-200"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="mb-6"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;h2 class="text-3xl font-serif font-bold text-ink-black mb-2"&gt;演变轨迹：控制与增长的张力&lt;/h2&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;p class="text-gray-600 max-w-4xl"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>中国共产党的历史是一个在“意识形态纯洁性”与“政权生存（经济绩效）”之间摇摆的过程。当经济危机威胁政权时，控制放松；当经济恢复，控制收紧。这并非走向民主的线性过程，而是极权主义的自我调整。</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;!-- Plotly Chart Container --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="w-full bg-white rounded-xl shadow-sm border border-gray-200 p-2 mb-6"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                 </span>&lt;div id="evolutionChart" class="w-full h-[400px]"&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;!-- Dynamic Descriptive Text based on Timeline --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="grid grid-cols-1 md:grid-cols-3 gap-6"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;div id="phase-mao" class="p-4 rounded-lg bg-white border-l-4 border-red-800 shadow-sm opacity-50 hover:opacity-100 transition-opacity cursor-pointer" onclick="highlightPhase(0)"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;h4 class="font-bold text-red-900"&gt;1. 极权建立期 (1949-1976)&lt;/h4&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;p class="text-xs text-gray-600 mt-2"&gt;全盘苏化，建立公有制与计划经济。通过通过土地改革、三反五反消灭私有产权与社会力量。结局是经济崩溃。&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;div id="phase-deng" class="p-4 rounded-lg bg-white border-l-4 border-yellow-600 shadow-sm opacity-100 cursor-pointer" onclick="highlightPhase(1)"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;h4 class="font-bold text-yellow-800"&gt;2. 分权式极权 (1978-2012)&lt;/h4&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;p class="text-xs text-gray-600 mt-2"&gt;&lt;strong&gt;RDA模式：&lt;/strong&gt;为了生存，中央向地方分权。允许私营经济，但党保留人事任命权（通过GDP考核）。创造了增长奇迹，但并未改变极权基因。&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;div id="phase-xi" class="p-4 rounded-lg bg-white border-l-4 border-red-600 shadow-sm opacity-50 hover:opacity-100 transition-opacity cursor-pointer" onclick="highlightPhase(2)"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;h4 class="font-bold text-red-700"&gt;3. 极权回归期 (2012-至今)&lt;/h4&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;p class="text-xs text-gray-600 mt-2"&gt;面对私营部门壮大带来的失控风险，体制利用高科技手段（数字极权）重新收权。国进民退，强调安全高于增长。&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/section&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;!-- SECTION 4: DECODING THE GENES (CARDS) --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;section id="mechanisms"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="text-center mb-10"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;h2 class="text-3xl font-serif font-bold text-ink-black"&gt;解码制度基因&lt;/h2&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;p class="text-gray-600 mt-2"&gt;中国制度是两个古老传统的现代嵌合体&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="grid grid-cols-1 md:grid-cols-2 gap-8 relative"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;!-- Connector Line (Visual only for large screens) --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;div class="hidden md:block absolute left-1/2 top-0 bottom-0 w-px bg-gray-300 transform -translate-x-1/2 z-0"&gt;&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;!-- Left Column: Imperial Legacy --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;div class="z-10 space-y-6"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;div class="text-center bg-paper-bg p-2 rounded border border-gray-200 inline-block w-full mb-4"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;span class="font-serif font-bold text-xl text-yellow-900"&gt;🏛️ 秦汉体制基因&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;p class="text-xs text-gray-500"&gt;Imperial Tradition&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;div class="section-card p-6 rounded-xl"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;h4 class="font-bold text-lg mb-2 text-ink-black"&gt;大一统 (Great Unification)&lt;/h4&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;p class="text-sm text-gray-600"&gt;无论是土地还是人口，都是皇权的资产。“普天之下，莫非王土”。现代体现为土地国有制和对社会资源的最终支配权。&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;div class="section-card p-6 rounded-xl"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;h4 class="font-bold text-lg mb-2 text-ink-black"&gt;官僚治国 (Bureaucracy)&lt;/h4&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;p class="text-sm text-gray-600"&gt;由中央任命流官治理地方，官员只对上级负责，不对下负责。这构成了现代RDA模式（向地方行政分权）的历史基础。&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;!-- Right Column: Soviet Legacy --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;div class="z-10 space-y-6"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;div class="text-center bg-paper-bg p-2 rounded border border-gray-200 inline-block w-full mb-4"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;span class="font-serif font-bold text-xl text-red-900"&gt;☭ 布尔什维克基因&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;p class="text-xs text-gray-500"&gt;Leninist Tradition&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;div class="section-card p-6 rounded-xl"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;h4 class="font-bold text-lg mb-2 text-ink-black"&gt;党国体制 (Party-State)&lt;/h4&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;p class="text-sm text-gray-600"&gt;党在法律之上，党在国家之上。国家机构（政府、法院、军队）只是党的执行部门。这是极权主义的核心组织架构。&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;div class="section-card p-6 rounded-xl"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;h4 class="font-bold text-lg mb-2 text-ink-black"&gt;党管干部 (Nomenklatura)&lt;/h4&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;p class="text-sm text-gray-600"&gt;起源于苏联的“职务名录制度”。核心是对人事权的绝对垄断。在改革开放时期，这成为中央控制拥有经济自主权的地方官员的“皮鞭”。&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;!-- Synthesis Box --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="mt-12 p-6 bg-slate-800 text-white rounded-xl shadow-lg text-center relative overflow-hidden"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;div class="relative z-10"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;h3 class="text-2xl font-serif font-bold mb-4"&gt;合流结果：分权式极权制 (RDA)&lt;/h3&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;p class="text-gray-300 max-w-3xl mx-auto leading-relaxed"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>这就是许成钢理论的精髓：&lt;strong&gt;行政上的分权 (Imperial Legacy)&lt;/strong&gt; + &lt;strong&gt;政治/意识形态的集权 (Soviet Legacy)&lt;/strong&gt;。&lt;br&gt;&lt;br&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>这种组合在特定时期（改革开放）释放了巨大的经济活力（地方竞争），但由于“基因”中缺乏法治和产权保护，一旦经济做大威胁到党的领导（极权本质），体制必然会为了生存而牺牲经济，回归集权。</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;!-- Decorative background opacity --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;div class="absolute top-0 left-0 w-full h-full bg-blue-900 opacity-20"&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/section&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/main&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;!-- Footer --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;footer class="bg-white border-t border-gray-200 mt-12 py-10"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="max-w-7xl mx-auto px-4 text-center"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;p class="text-sm text-gray-500"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>本应用基于许成钢教授关于《制度基因：中国制度与极权主义制度的起源》的研究内容生成。&lt;br&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>旨在通过交互式数据可视化辅助理解复杂的政治经济学理论。</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;p class="text-xs text-gray-400 mt-4"&gt;© 2023 Interactive Analysis Preview&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/footer&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;!-- JavaScript Logic --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;script&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>// --- State Management ---</p>
+<p class="p1"><span class="Apple-converted-space">        </span>const state = {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>currentRadar: 'totalitarian',</p>
+<p class="p1"><span class="Apple-converted-space">            </span>currentPhase: 1 // Default to Deng era for highlighting</p>
+<p class="p1"><span class="Apple-converted-space">        </span>};</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>// --- Navigation ---</p>
+<p class="p1"><span class="Apple-converted-space">        </span>function scrollToSection(id) {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>document.getElementById(id).scrollIntoView({ behavior: 'smooth' });</p>
+<p class="p2"><span class="Apple-converted-space">            </span></p>
+<p class="p1"><span class="Apple-converted-space">            </span>// Update active button styling</p>
+<p class="p1"><span class="Apple-converted-space">            </span>document.querySelectorAll('.nav-btn').forEach(btn =&gt; {</p>
+<p class="p1"><span class="Apple-converted-space">                </span>btn.classList.remove('active', 'text-alert-red', 'border-alert-red');</p>
+<p class="p1"><span class="Apple-converted-space">                </span>btn.classList.add('text-gray-500');</p>
+<p class="p1"><span class="Apple-converted-space">            </span>});</p>
+<p class="p1"><span class="Apple-converted-space">            </span>event.target.classList.add('active', 'text-alert-red');</p>
+<p class="p1"><span class="Apple-converted-space">            </span>event.target.classList.remove('text-gray-500');</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>// --- Chart.js: Radar Chart Logic ---</p>
+<p class="p1"><span class="Apple-converted-space">        </span>let radarChart;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>const radarData = {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>totalitarian: {</p>
+<p class="p1"><span class="Apple-converted-space">                </span>label: '极权主义 (Mao/Stalin)',</p>
+<p class="p1"><span class="Apple-converted-space">                </span>data: [10, 10, 10, 9, 10],</p>
+<p class="p1"><span class="Apple-converted-space">                </span>color: 'rgba(168, 50, 50, 0.7)'</p>
+<p class="p1"><span class="Apple-converted-space">            </span>},</p>
+<p class="p1"><span class="Apple-converted-space">            </span>authoritarian: {</p>
+<p class="p1"><span class="Apple-converted-space">                </span>label: '威权主义 (General)',</p>
+<p class="p1"><span class="Apple-converted-space">                </span>data: [8, 4, 3, 6, 2],</p>
+<p class="p1"><span class="Apple-converted-space">                </span>color: 'rgba(74, 111, 165, 0.7)'</p>
+<p class="p1"><span class="Apple-converted-space">            </span>},</p>
+<p class="p1"><span class="Apple-converted-space">            </span>china_reform: {</p>
+<p class="p1"><span class="Apple-converted-space">                </span>label: '中国分权式极权 (Reform Era)',</p>
+<p class="p1"><span class="Apple-converted-space">                </span>data: [9, 5, 8, 7, 6],</p>
+<p class="p1"><span class="Apple-converted-space">                </span>color: 'rgba(212, 175, 55, 0.7)'</p>
+<p class="p1"><span class="Apple-converted-space">            </span>}</p>
+<p class="p1"><span class="Apple-converted-space">        </span>};</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>function initRadarChart() {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>const ctx = document.getElementById('regimeRadar').getContext('2d');</p>
+<p class="p2"><span class="Apple-converted-space">            </span></p>
+<p class="p1"><span class="Apple-converted-space">            </span>radarChart = new Chart(ctx, {</p>
+<p class="p1"><span class="Apple-converted-space">                </span>type: 'radar',</p>
+<p class="p1"><span class="Apple-converted-space">                </span>data: {</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>labels: [</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>'政治垄断 (Political)',<span class="Apple-converted-space"> </span></p>
+<p class="p1"><span class="Apple-converted-space">                        </span>'经济控制 (Economic)',<span class="Apple-converted-space"> </span></p>
+<p class="p1"><span class="Apple-converted-space">                        </span>'人事控制 (Personnel)',<span class="Apple-converted-space"> </span></p>
+<p class="p1"><span class="Apple-converted-space">                        </span>'暴力/强制 (Coercion)',<span class="Apple-converted-space"> </span></p>
+<p class="p1"><span class="Apple-converted-space">                        </span>'意识形态 (Ideology)'</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>],</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>datasets: [{</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>label: radarData.totalitarian.label,</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>data: radarData.totalitarian.data,</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>fill: true,</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>backgroundColor: 'rgba(168, 50, 50, 0.2)',</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>borderColor: 'rgba(168, 50, 50, 1)',</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>pointBackgroundColor: 'rgba(168, 50, 50, 1)',</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>pointBorderColor: '#fff',</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>pointHoverBackgroundColor: '#fff',</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>pointHoverBorderColor: 'rgba(168, 50, 50, 1)'</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>}]</p>
+<p class="p1"><span class="Apple-converted-space">                </span>},</p>
+<p class="p1"><span class="Apple-converted-space">                </span>options: {</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>responsive: true,</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>maintainAspectRatio: false,</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>scales: {</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>r: {</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>angleLines: { color: '#e5e7eb' },</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>grid: { color: '#e5e7eb' },</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>pointLabels: {</p>
+<p class="p1"><span class="Apple-converted-space">                                </span>font: { size: 12, family: "'Noto Sans SC', sans-serif" },</p>
+<p class="p1"><span class="Apple-converted-space">                                </span>color: '#4b5563'</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>},</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>suggestedMin: 0,</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>suggestedMax: 10,</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>ticks: { display: false } // Hide numbers for cleaner look</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>}</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>},</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>plugins: {</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>legend: { display: true, position: 'bottom' },</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>tooltip: {</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>backgroundColor: 'rgba(0,0,0,0.8)',</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>titleFont: { family: "'Noto Serif SC', serif" },</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>bodyFont: { family: "'Noto Sans SC', sans-serif" }</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>}</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>}</p>
+<p class="p1"><span class="Apple-converted-space">                </span>}</p>
+<p class="p1"><span class="Apple-converted-space">            </span>});</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>function updateRadar(type) {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>// Update buttons visual state</p>
+<p class="p1"><span class="Apple-converted-space">            </span>['totalitarian', 'authoritarian', 'china_reform'].forEach(t =&gt; {</p>
+<p class="p1"><span class="Apple-converted-space">                </span>const btn = document.getElementById(`btn-${t}`);</p>
+<p class="p1"><span class="Apple-converted-space">                </span>if (t === type) {</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>btn.classList.add('border-l-4', 'shadow-sm');</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>if(t === 'totalitarian') btn.classList.add('border-l-alert-red');</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>if(t === 'authoritarian') btn.classList.add('border-l-calm-blue');</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>if(t === 'china_reform') btn.classList.add('border-l-highlight-gold');</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>btn.classList.remove('border-gray-200');</p>
+<p class="p1"><span class="Apple-converted-space">                </span>} else {</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>btn.classList.remove('border-l-4', 'border-l-alert-red', 'border-l-calm-blue', 'border-l-highlight-gold', 'shadow-sm');</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>btn.classList.add('border-gray-200');</p>
+<p class="p1"><span class="Apple-converted-space">                </span>}</p>
+<p class="p1"><span class="Apple-converted-space">            </span>});</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">            </span>// Update Chart</p>
+<p class="p1"><span class="Apple-converted-space">            </span>const selected = radarData[type];</p>
+<p class="p1"><span class="Apple-converted-space">            </span>radarChart.data.datasets[0].data = selected.data;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>radarChart.data.datasets[0].label = selected.label;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>radarChart.data.datasets[0].borderColor = selected.color.replace('0.7', '1');</p>
+<p class="p1"><span class="Apple-converted-space">            </span>radarChart.data.datasets[0].backgroundColor = selected.color.replace('0.7', '0.2');</p>
+<p class="p1"><span class="Apple-converted-space">            </span>radarChart.data.datasets[0].pointBackgroundColor = selected.color.replace('0.7', '1');</p>
+<p class="p1"><span class="Apple-converted-space">            </span>radarChart.update();</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>// --- Plotly: Evolution Chart Logic ---</p>
+<p class="p1"><span class="Apple-converted-space">        </span>function initEvolutionChart() {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>// Mock data representing the "Control vs Growth" tension</p>
+<p class="p1"><span class="Apple-converted-space">            </span>// X: Year, Y1: GDP Growth (Proxy for Regime Legitimacy), Y2: Centralization Index (Theoretical)</p>
+<p class="p2"><span class="Apple-converted-space">            </span></p>
+<p class="p1"><span class="Apple-converted-space">            </span>const years = [1950, 1958, 1966, 1976, 1978, 1989, 1992, 2001, 2008, 2012, 2018, 2023];</p>
+<p class="p1"><span class="Apple-converted-space">            </span>const centralization = [9, 10, 10, 9.5, 7, 8.5, 6, 5, 6, 8, 9, 9.5]; // 0-10 scale</p>
+<p class="p1"><span class="Apple-converted-space">            </span>const growth = [3, -5, -2, 2, 8, 4, 12, 10, 9, 7, 6, 5]; // Percentage</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">            </span>const trace1 = {</p>
+<p class="p1"><span class="Apple-converted-space">                </span>x: years,</p>
+<p class="p1"><span class="Apple-converted-space">                </span>y: centralization,</p>
+<p class="p1"><span class="Apple-converted-space">                </span>name: '政治集权度 (Centralization)',</p>
+<p class="p1"><span class="Apple-converted-space">                </span>type: 'scatter',</p>
+<p class="p1"><span class="Apple-converted-space">                </span>mode: 'lines+markers',</p>
+<p class="p1"><span class="Apple-converted-space">                </span>line: { color: '#a83232', width: 3, shape: 'spline' },</p>
+<p class="p1"><span class="Apple-converted-space">                </span>marker: { size: 6 }</p>
+<p class="p1"><span class="Apple-converted-space">            </span>};</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">            </span>const trace2 = {</p>
+<p class="p1"><span class="Apple-converted-space">                </span>x: years,</p>
+<p class="p1"><span class="Apple-converted-space">                </span>y: growth,</p>
+<p class="p1"><span class="Apple-converted-space">                </span>name: '经济增长率 (Growth)',</p>
+<p class="p1"><span class="Apple-converted-space">                </span>yaxis: 'y2',</p>
+<p class="p1"><span class="Apple-converted-space">                </span>type: 'scatter',</p>
+<p class="p1"><span class="Apple-converted-space">                </span>mode: 'lines',</p>
+<p class="p1"><span class="Apple-converted-space">                </span>line: { color: '#d4af37', width: 2, dash: 'dot', shape: 'spline' },</p>
+<p class="p1"><span class="Apple-converted-space">                </span>fill: 'tozeroy',</p>
+<p class="p1"><span class="Apple-converted-space">                </span>fillcolor: 'rgba(212, 175, 55, 0.1)'</p>
+<p class="p1"><span class="Apple-converted-space">            </span>};</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">            </span>const layout = {</p>
+<p class="p1"><span class="Apple-converted-space">                </span>title: { text: '', font: { family: 'Noto Serif SC', size: 18 } },</p>
+<p class="p1"><span class="Apple-converted-space">                </span>autosize: true,</p>
+<p class="p1"><span class="Apple-converted-space">                </span>margin: { l: 50, r: 50, t: 30, b: 50 },</p>
+<p class="p1"><span class="Apple-converted-space">                </span>xaxis: { title: '年份' },</p>
+<p class="p1"><span class="Apple-converted-space">                </span>yaxis: { title: '集权指数 (1-10)', range: [0, 11] },</p>
+<p class="p1"><span class="Apple-converted-space">                </span>yaxis2: {</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>title: 'GDP增长率 (%)',</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>overlaying: 'y',</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>side: 'right',</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>range: [-10, 15]</p>
+<p class="p1"><span class="Apple-converted-space">                </span>},</p>
+<p class="p1"><span class="Apple-converted-space">                </span>legend: { orientation: 'h', y: 1.1 },</p>
+<p class="p1"><span class="Apple-converted-space">                </span>shapes: [</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>// Highlight Reform Era</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>{</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>type: 'rect',</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>xref: 'x', yref: 'paper',</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>x0: 1978, x1: 2012,</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>y0: 0, y1: 1,</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>fillcolor: '#e6b800',</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>opacity: 0.1,</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>line: { width: 0 }</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>}</p>
+<p class="p1"><span class="Apple-converted-space">                </span>],</p>
+<p class="p1"><span class="Apple-converted-space">                </span>annotations: [</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>{ x: 1958, y: 10, text: '大跃进', showarrow: true, arrowhead: 2, ax: 0, ay: -20 },</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>{ x: 1978, y: 7, text: '改革开放', showarrow: true, arrowhead: 2, ax: 0, ay: -30 },</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>{ x: 1992, y: 6, text: '南巡', showarrow: true, arrowhead: 2, ax: 0, ay: -30 },</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>{ x: 2012, y: 8, text: '新时代', showarrow: true, arrowhead: 2, ax: 0, ay: -20 }</p>
+<p class="p1"><span class="Apple-converted-space">                </span>]</p>
+<p class="p1"><span class="Apple-converted-space">            </span>};</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">            </span>const config = { responsive: true, displayModeBar: false };</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">            </span>Plotly.newPlot('evolutionChart', [trace1, trace2], layout, config);</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>// --- Interaction: Phase Highlighter ---</p>
+<p class="p1"><span class="Apple-converted-space">        </span>function highlightPhase(index) {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>const phases = ['phase-mao', 'phase-deng', 'phase-xi'];</p>
+<p class="p2"><span class="Apple-converted-space">            </span></p>
+<p class="p1"><span class="Apple-converted-space">            </span>phases.forEach((id, idx) =&gt; {</p>
+<p class="p1"><span class="Apple-converted-space">                </span>const el = document.getElementById(id);</p>
+<p class="p1"><span class="Apple-converted-space">                </span>if (idx === index) {</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>el.classList.remove('opacity-50');</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>el.classList.add('opacity-100', 'ring-2', 'ring-offset-2', 'ring-gray-200');</p>
+<p class="p1"><span class="Apple-converted-space">                </span>} else {</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>el.classList.add('opacity-50');</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>el.classList.remove('opacity-100', 'ring-2', 'ring-offset-2', 'ring-gray-200');</p>
+<p class="p1"><span class="Apple-converted-space">                </span>}</p>
+<p class="p1"><span class="Apple-converted-space">            </span>});</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">            </span>// Update chart annotations or highlight range based on phase?<span class="Apple-converted-space"> </span></p>
+<p class="p1"><span class="Apple-converted-space">            </span>// For simplicity, just visually focusing the card for now.</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>// --- Init ---</p>
+<p class="p1"><span class="Apple-converted-space">        </span>document.addEventListener('DOMContentLoaded', () =&gt; {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>initRadarChart();</p>
+<p class="p1"><span class="Apple-converted-space">            </span>initEvolutionChart();</p>
+<p class="p2"><span class="Apple-converted-space">            </span></p>
+<p class="p1"><span class="Apple-converted-space">            </span>// Set initial highlights</p>
+<p class="p1"><span class="Apple-converted-space">            </span>highlightPhase(1); // Highlight Deng era initially as it's central to the "Paradox"</p>
+<p class="p1"><span class="Apple-converted-space">            </span>updateRadar('totalitarian');</p>
+<p class="p1"><span class="Apple-converted-space">        </span>});</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/script&gt;</p>
+<p class="p1">&lt;/body&gt;</p>
+<p class="p1">&lt;/html&gt;</p>
+</body>
+</html>
